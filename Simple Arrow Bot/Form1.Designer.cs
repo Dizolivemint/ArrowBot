@@ -1,6 +1,6 @@
 ﻿namespace Simple_Arrow_Bot
 {
-    partial class Form1
+    partial class frmBot
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmBot
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Name = "frmBot";
+            this.Text = "Simple Arrow Bot";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

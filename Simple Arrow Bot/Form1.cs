@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Simple_Arrow_Bot
 {
-    public partial class Form1 : Form
+    public partial class frmBot : Form
     {
-        public Form1()
+        public frmBot()
         {
             InitializeComponent();
         }
