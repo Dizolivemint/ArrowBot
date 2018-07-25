@@ -16,5 +16,21 @@ namespace Simple_Arrow_Bot
         {
             InitializeComponent();
         }
+
+        private void frmBot_Load(object sender, EventArgs e)
+        {
+            char arrow;
+            arrow = Convert.ToChar(231);
+            lblArrow.Text = arrow.ToString();
+        }
+    }
+
+    public class Bot
+    {
+        private int coordinateX;
+        private int coordinateY;
+
+        private int mapFacing;
+
     }
 }
