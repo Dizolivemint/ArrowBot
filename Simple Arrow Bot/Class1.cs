@@ -10,49 +10,30 @@ namespace Simple_Arrow_Bot
 {
     public class Robot
     {
-        private int coordinateX;
-        private int coordinateY;
 
-        public int boundry;
+        // Create an arrow for each direction into an array
+        public char[] arrow = new char[4];
 
-        public int Boundry { get; set; }
-
+        private int direction;
+        
         public int X { get; set; }
 
         public int Y { get; set; }
 
-        public void AddBot(int X, int Y)
+        public string Direction(int direction)
         {
-            this.coordinateX = X;
-            this.coordinateY = Y;
-
+            this.direction = direction;
+            return this.arrow[direction].ToString();
         }
 
-        // Add a GroupBox to a form and set some of its common properties.
-        public GroupBox AddBoundryBox(int formWidth, int formHeight)
+        public void CreateArrow()
         {
-            // Create a GroupBox and add a TextBox to it.
-            GroupBox boundryBox = new GroupBox();
-            // groupBox1.Controls.Add(textBox1);
-            
-            boundryBox.Location = new Point((formWidth - Boundry) / 2, (formHeight - Boundry) / 2);
-            boundryBox.Height = Boundry;
-            boundryBox.Width = Boundry;
-
-            return boundryBox;
-        }
-
-        public char[] CreateArrow()
-        {
-            // Create an arrow for each direction into an array
-            char[] arrow = new char[4];
             for (int i = 0; i < 4; i++)
             {
-                arrow[i] = Convert.ToChar(231 + i);
+                this.arrow[i] = Convert.ToChar(231 + i);
                 // West, East, North, South
             }
 
-            return arrow;
         }
 
         public Label CreateBot()
@@ -61,8 +42,30 @@ namespace Simple_Arrow_Bot
             Label lblBot = new Label();
             lblBot.Font = new Font("Wingdings", 12);
 
-            lblBot.Location = new Point(0, 0);
+            // Create the arrows
+            this.CreateArrow();
+
+            // Change direction to North
+            lblBot.Text = this.Direction(2);
+
+            this.Pos(lblBot, 0, 0);
+
             return lblBot;
+        }
+
+        public void Pos(Label Bot, int X, int Y)
+        {
+            if (this.direction == 3)
+            {
+                X = -X;
+            }
+
+            if (this.direction == 4)
+            {
+                Y = -Y;
+            }
+
+            Bot.Location = new Point(this.X + X, this.Y + Y);
         }
 
     }

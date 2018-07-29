@@ -13,48 +13,57 @@ namespace Simple_Arrow_Bot
 {
     public partial class frmBot : Form
     {
+        // Create a new instance of the Robot class
+        private Robot Bot = new Robot();
+
+        private Label lblBot = new Label();
+
         public frmBot()
         {
             InitializeComponent();
-            
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            
-        }
 
-        
+        }
 
         private void frmBot_Load(object sender, EventArgs e)
         {
-            // Get properties from Robot Class
-            Robot Bot = new Robot();
+            // Make it so that the form can't be resized or it will mess with calculations
+            // this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
-            Bot.Boundry = 100;
+            // Set the starting coordinates
+            this.Bot.X = boundryBox.Width / 2;
+            this.Bot.Y = boundryBox.Height / 2;
 
-            Bot.X = 15;
-            Bot.Y = 15;
+            // Create the Label
+            this.lblBot = this.Bot.CreateBot();
 
-            GroupBox boundryBox = Bot.AddBoundryBox(this.Width, this.Height);
+            // Debug.WriteLine(this.lblBot.Font);
 
-            char[] arrow = Bot.CreateArrow();
-
-            Label lblBot = Bot.CreateBot();
-
-            Debug.WriteLine(lblBot.Font);
-            lblBot.Text = arrow[2].ToString();
-
-            // Add controls.
-            this.Controls.Add(boundryBox);
-
-            boundryBox.Controls.Add(lblBot);
-
-            
-
-            
+            boundryBox.Controls.Add(this.lblBot);
         }
 
         private void btnGo1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEast_Click(object sender, EventArgs e)
+        {
+            this.lblBot.Text = Bot.Direction(1);
+        }
+
+        private void btnWest_Click(object sender, EventArgs e)
+        {
+            this.lblBot.Text = Bot.Direction(0);
+        }
+
+        private void btnNorth_Click(object sender, EventArgs e)
+        {
+            this.lblBot.Text = Bot.Direction(2);
+        }
+
+        private void btnSouth_Click(object sender, EventArgs e)
+        {
+            this.lblBot.Text = Bot.Direction(3);
         }
     }
 }
