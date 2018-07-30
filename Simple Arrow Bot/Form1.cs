@@ -30,8 +30,8 @@ namespace Simple_Arrow_Bot
             // this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
             // Set the starting coordinates
-            this.Bot.X = boundryBox.Width / 2;
-            this.Bot.Y = boundryBox.Height / 2;
+            this.Bot.startX = boundryBox.Width / 2;
+            this.Bot.startY = boundryBox.Height / 2;
 
             // Create the Label
             this.lblBot = this.Bot.CreateBot();
@@ -43,7 +43,7 @@ namespace Simple_Arrow_Bot
 
         private void btnGo1_Click(object sender, EventArgs e)
         {
-
+            this.Bot.Pos(this.lblBot, 1);
         }
 
         private void btnEast_Click(object sender, EventArgs e)
@@ -64,6 +64,16 @@ namespace Simple_Arrow_Bot
         private void btnSouth_Click(object sender, EventArgs e)
         {
             this.lblBot.Text = Bot.Direction(3);
+        }
+
+        private void btnGo10_Click(object sender, EventArgs e)
+        {
+            this.Bot.Pos(this.lblBot, 10);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

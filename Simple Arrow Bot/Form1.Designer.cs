@@ -35,11 +35,12 @@
             this.btnWest = new System.Windows.Forms.Button();
             this.btnEast = new System.Windows.Forms.Button();
             this.boundryBox = new System.Windows.Forms.GroupBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGo1
             // 
-            this.btnGo1.Location = new System.Drawing.Point(33, 846);
+            this.btnGo1.Location = new System.Drawing.Point(43, 790);
             this.btnGo1.Name = "btnGo1";
             this.btnGo1.Size = new System.Drawing.Size(132, 80);
             this.btnGo1.TabIndex = 0;
@@ -49,16 +50,17 @@
             // 
             // btnGo10
             // 
-            this.btnGo10.Location = new System.Drawing.Point(484, 846);
+            this.btnGo10.Location = new System.Drawing.Point(494, 790);
             this.btnGo10.Name = "btnGo10";
             this.btnGo10.Size = new System.Drawing.Size(133, 80);
             this.btnGo10.TabIndex = 1;
             this.btnGo10.Text = "Go 10";
             this.btnGo10.UseVisualStyleBackColor = true;
+            this.btnGo10.Click += new System.EventHandler(this.btnGo10_Click);
             // 
             // btnNorth
             // 
-            this.btnNorth.Location = new System.Drawing.Point(291, 742);
+            this.btnNorth.Location = new System.Drawing.Point(301, 686);
             this.btnNorth.Name = "btnNorth";
             this.btnNorth.Size = new System.Drawing.Size(53, 60);
             this.btnNorth.TabIndex = 2;
@@ -68,7 +70,7 @@
             // 
             // btnSouth
             // 
-            this.btnSouth.Location = new System.Drawing.Point(291, 866);
+            this.btnSouth.Location = new System.Drawing.Point(301, 810);
             this.btnSouth.Name = "btnSouth";
             this.btnSouth.Size = new System.Drawing.Size(53, 60);
             this.btnSouth.TabIndex = 3;
@@ -78,7 +80,7 @@
             // 
             // btnWest
             // 
-            this.btnWest.Location = new System.Drawing.Point(229, 805);
+            this.btnWest.Location = new System.Drawing.Point(239, 749);
             this.btnWest.Name = "btnWest";
             this.btnWest.Size = new System.Drawing.Size(53, 60);
             this.btnWest.TabIndex = 4;
@@ -88,7 +90,7 @@
             // 
             // btnEast
             // 
-            this.btnEast.Location = new System.Drawing.Point(354, 805);
+            this.btnEast.Location = new System.Drawing.Point(364, 749);
             this.btnEast.Name = "btnEast";
             this.btnEast.Size = new System.Drawing.Size(53, 60);
             this.btnEast.TabIndex = 5;
@@ -104,11 +106,22 @@
             this.boundryBox.TabIndex = 6;
             this.boundryBox.TabStop = false;
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(239, 914);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(178, 78);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "E&xit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 968);
+            this.ClientSize = new System.Drawing.Size(665, 1067);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.boundryBox);
             this.Controls.Add(this.btnEast);
             this.Controls.Add(this.btnWest);
@@ -132,6 +145,7 @@
         private System.Windows.Forms.Button btnWest;
         private System.Windows.Forms.Button btnEast;
         private System.Windows.Forms.GroupBox boundryBox;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 
