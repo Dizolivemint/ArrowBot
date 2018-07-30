@@ -36,6 +36,7 @@
             this.btnEast = new System.Windows.Forms.Button();
             this.boundryBox = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
+            this.lblCoordinates = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnGo1
@@ -100,7 +101,7 @@
             // 
             // boundryBox
             // 
-            this.boundryBox.Location = new System.Drawing.Point(33, 26);
+            this.boundryBox.Location = new System.Drawing.Point(27, 58);
             this.boundryBox.Name = "boundryBox";
             this.boundryBox.Size = new System.Drawing.Size(600, 600);
             this.boundryBox.TabIndex = 6;
@@ -116,11 +117,21 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // lblCoordinates
+            // 
+            this.lblCoordinates.AutoSize = true;
+            this.lblCoordinates.Location = new System.Drawing.Point(37, 23);
+            this.lblCoordinates.Name = "lblCoordinates";
+            this.lblCoordinates.Size = new System.Drawing.Size(136, 32);
+            this.lblCoordinates.TabIndex = 8;
+            this.lblCoordinates.Text = "X: X, Y: Y";
+            // 
             // frmBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 1067);
+            this.Controls.Add(this.lblCoordinates);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.boundryBox);
             this.Controls.Add(this.btnEast);
@@ -133,6 +144,7 @@
             this.Text = "Simple Arrow Bot";
             this.Load += new System.EventHandler(this.frmBot_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -146,6 +158,7 @@
         private System.Windows.Forms.Button btnEast;
         private System.Windows.Forms.GroupBox boundryBox;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label lblCoordinates;
     }
 }
 

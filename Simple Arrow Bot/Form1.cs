@@ -39,11 +39,18 @@ namespace Simple_Arrow_Bot
             // Debug.WriteLine(this.lblBot.Font);
 
             boundryBox.Controls.Add(this.lblBot);
+
+            ShowCoordinates();
         }
 
+        private void ShowCoordinates()
+        {
+            lblCoordinates.Text = "X: " + this.Bot.X + ", " + "Y: " + this.Bot.Y;
+        }
         private void btnGo1_Click(object sender, EventArgs e)
         {
             this.Bot.Pos(this.lblBot, 1);
+            ShowCoordinates();
         }
 
         private void btnEast_Click(object sender, EventArgs e)
@@ -69,6 +76,7 @@ namespace Simple_Arrow_Bot
         private void btnGo10_Click(object sender, EventArgs e)
         {
             this.Bot.Pos(this.lblBot, 10);
+            ShowCoordinates();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
